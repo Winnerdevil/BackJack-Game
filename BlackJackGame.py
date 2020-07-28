@@ -202,6 +202,6 @@ def main():
         game.play()
         again = games.ask_yes_no("\nDo you want to play again?: ")
 
-
-# Call the main to start
-main()
+if __name__ == "__main__":
+    # Calling main to start the game
+    main()
