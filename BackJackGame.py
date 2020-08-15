@@ -3,7 +3,7 @@ import cards
 
 
 class BJ_Card(cards.Card):
-    """ A Blackjack Card. """
+    """ A Backjack Card. """
     ACE_VALUE = 1
 
     @property
@@ -19,7 +19,7 @@ class BJ_Card(cards.Card):
 
 
 class BJ_Deck(cards.Deck):
-    """ A Blackjack Deck. """
+    """ A Backjack Deck. """
 
     def populate(self):
         for suit in BJ_Card.SUITS:
@@ -28,7 +28,7 @@ class BJ_Deck(cards.Deck):
 
 
 class BJ_Hand(cards.Hand):
-    """ A Blackjack Hand. """
+    """ A Backjack Hand. """
 
     def __init__(self, name):
         super(BJ_Hand, self).__init__()
@@ -72,7 +72,7 @@ class BJ_Hand(cards.Hand):
 
 
 class BJ_Player(BJ_Hand):
-    """ A Blackjack Player. """
+    """ A Backjack Player. """
 
     def is_hitting(self):
         response = games.ask_yes_no("\n" + self.name + ", do you want a hit? (Y/N): ")
@@ -93,7 +93,7 @@ class BJ_Player(BJ_Hand):
 
 
 class BJ_Dealer(BJ_Hand):
-    """ A Blackjack Dealer. """
+    """ A Backjack Dealer. """
 
     def is_hitting(self):
         return self.total < 17
@@ -107,7 +107,7 @@ class BJ_Dealer(BJ_Hand):
 
 
 class BJ_Game(object):
-    """ A Blackjack Game. """
+    """ A Backjack Game. """
 
     def __init__(self, names):
         self.players = []
@@ -185,7 +185,7 @@ class BJ_Game(object):
 
 # Take input, number, names of player and start the game
 def main():
-    print("\n\t\tWelcome to BlackjackGame!\n")
+    print("\n\t\tWelcome to BackjackGame!\n")
     names = []
     number = games.ask_number("How many players? (1 - 7): ", low=1, high=8)
 
